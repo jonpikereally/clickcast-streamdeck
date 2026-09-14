@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css"></head><body>
+<div class="row">
+  <label>Press does</label>
+  <select name="mode" data-default="cycle">
+    <option value="cycle">Cycle to next colour</option>
+    <option value="set">Jump to</option>
+  </select>
+</div>
+<div class="row" data-show-when="mode=set">
+  <label>Colour</label>
+  <select name="value" data-default="yellow">
+    <option value="yellow">Yellow</option>
+    <option value="orange">Orange</option>
+    <option value="green">Green</option>
+    <option value="blue">Blue</option>
+    <option value="pink">Pink</option>
+    <option value="white">White</option>
+  </select>
+</div>
+<p class="hint">The key shows the colour it will set (or the current colour when cycling).</p>
+<script src="pi.js"></script></body></html>

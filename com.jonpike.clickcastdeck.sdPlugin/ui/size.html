@@ -1,0 +1,26 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css"></head><body>
+<div class="row">
+  <label>Controls</label>
+  <select name="target" data-default="cursorSize">
+    <option value="cursorSize">Cursor ring size</option>
+    <option value="hudSize">Keystroke text size</option>
+  </select>
+</div>
+<div class="row">
+  <label>Press does</label>
+  <select name="mode" data-default="cycle">
+    <option value="cycle">Cycle to next</option>
+    <option value="set">Jump to</option>
+  </select>
+</div>
+<div class="row" data-show-when="mode=set">
+  <label>Jump to</label>
+  <select name="value" data-default="medium">
+    <option value="small">Small</option>
+    <option value="medium">Medium</option>
+    <option value="large">Large</option>
+    <option value="huge">Huge (cursor only)</option>
+  </select>
+</div>
+<p class="hint">On a dial: rotate to step through sizes, press to reset to Medium.</p>
+<script src="pi.js"></script></body></html>

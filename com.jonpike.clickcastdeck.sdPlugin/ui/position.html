@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css"></head><body>
+<div class="row">
+  <label>Press does</label>
+  <select name="mode" data-default="cycle">
+    <option value="cycle">Cycle positions</option>
+    <option value="set">Jump to</option>
+  </select>
+</div>
+<div class="row" data-show-when="mode=set">
+  <label>Position</label>
+  <select name="value" data-default="bottomCenter">
+    <option value="bottomLeft">Bottom Left</option>
+    <option value="bottomCenter">Bottom Center</option>
+    <option value="bottomRight">Bottom Right</option>
+    <option value="topLeft">Top Left</option>
+    <option value="topCenter">Top Center</option>
+    <option value="topRight">Top Right</option>
+  </select>
+</div>
+<p class="hint">Where the keystroke pill sits on the screen the mouse is on.</p>
+<script src="pi.js"></script></body></html>

@@ -1,0 +1,118 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "UUID": "com.jonpike.clickcastdeck",
+  "Name": "ClickCast Deck",
+  "Version": "1.0.0.0",
+  "Author": "Jon Pike",
+  "Description": "Control the ClickCast menu bar app while recording: pause the overlay, toggle the cursor ring, click ripples and keystroke display, change size, colour and position, and flash a message on screen.",
+  "Category": "ClickCast",
+  "CategoryIcon": "imgs/categoryIcon",
+  "Icon": "imgs/pluginIcon",
+  "CodePath": "bin/plugin.js",
+  "SDKVersion": 3,
+  "Nodejs": { "Version": "20" },
+  "Software": { "MinimumVersion": "6.9" },
+  "OS": [ { "Platform": "mac", "MinimumVersion": "13" } ],
+  "Actions": [
+    {
+      "Name": "Pause / Resume",
+      "UUID": "com.jonpike.clickcastdeck.pause",
+      "Icon": "imgs/active",
+      "Tooltip": "Hide or show the whole overlay. Lit while ClickCast is active. Press when the app isn't running to launch it.",
+      "PropertyInspectorPath": "ui/pause.html",
+      "Controllers": [ "Keypad" ],
+      "States": [
+        { "Image": "imgs/paused", "TitleAlignment": "bottom" },
+        { "Image": "imgs/active", "TitleAlignment": "bottom" }
+      ]
+    },
+    {
+      "Name": "Cursor Highlight",
+      "UUID": "com.jonpike.clickcastdeck.cursor",
+      "Icon": "imgs/cursorOn",
+      "Tooltip": "Toggle the ring that follows the pointer.",
+      "PropertyInspectorPath": "ui/toggle.html",
+      "Controllers": [ "Keypad" ],
+      "States": [
+        { "Image": "imgs/cursorOff", "TitleAlignment": "bottom" },
+        { "Image": "imgs/cursorOn", "TitleAlignment": "bottom" }
+      ]
+    },
+    {
+      "Name": "Click Ripples",
+      "UUID": "com.jonpike.clickcastdeck.ripples",
+      "Icon": "imgs/ripplesOn",
+      "Tooltip": "Toggle the expanding ring on every click.",
+      "PropertyInspectorPath": "ui/toggle.html",
+      "Controllers": [ "Keypad" ],
+      "States": [
+        { "Image": "imgs/ripplesOff", "TitleAlignment": "bottom" },
+        { "Image": "imgs/ripplesOn", "TitleAlignment": "bottom" }
+      ]
+    },
+    {
+      "Name": "Keystrokes",
+      "UUID": "com.jonpike.clickcastdeck.keystrokes",
+      "Icon": "imgs/keysOn",
+      "Tooltip": "Toggle the keystroke pill.",
+      "PropertyInspectorPath": "ui/toggle.html",
+      "Controllers": [ "Keypad" ],
+      "States": [
+        { "Image": "imgs/keysOff", "TitleAlignment": "bottom" },
+        { "Image": "imgs/keysOn", "TitleAlignment": "bottom" }
+      ]
+    },
+    {
+      "Name": "Keystroke Mode",
+      "UUID": "com.jonpike.clickcastdeck.mode",
+      "Icon": "imgs/modeShortcuts",
+      "Tooltip": "Switch between showing only shortcuts and showing everything you type.",
+      "PropertyInspectorPath": "ui/mode.html",
+      "Controllers": [ "Keypad" ],
+      "States": [
+        { "Image": "imgs/modeAll", "TitleAlignment": "bottom" },
+        { "Image": "imgs/modeShortcuts", "TitleAlignment": "bottom" }
+      ]
+    },
+    {
+      "Name": "Size",
+      "UUID": "com.jonpike.clickcastdeck.size",
+      "Icon": "imgs/size",
+      "Tooltip": "Cursor ring size or keystroke text size. Press to cycle or jump to a size; on a dial, rotate to change and press to reset.",
+      "PropertyInspectorPath": "ui/size.html",
+      "Controllers": [ "Keypad", "Encoder" ],
+      "Encoder": {
+        "layout": "$B1",
+        "TriggerDescription": { "Rotate": "Change size", "Push": "Reset to medium", "Touch": "Reset to medium" }
+      },
+      "States": [ { "Image": "imgs/size", "TitleAlignment": "bottom" } ]
+    },
+    {
+      "Name": "Highlight Colour",
+      "UUID": "com.jonpike.clickcastdeck.color",
+      "Icon": "imgs/color",
+      "Tooltip": "Cycle through ring colours, or jump to one. The key shows the colour.",
+      "PropertyInspectorPath": "ui/color.html",
+      "Controllers": [ "Keypad" ],
+      "States": [ { "Image": "imgs/color", "TitleAlignment": "bottom" } ]
+    },
+    {
+      "Name": "Keystroke Position",
+      "UUID": "com.jonpike.clickcastdeck.position",
+      "Icon": "imgs/position",
+      "Tooltip": "Move the keystroke pill to another corner or edge.",
+      "PropertyInspectorPath": "ui/position.html",
+      "Controllers": [ "Keypad" ],
+      "States": [ { "Image": "imgs/position", "TitleAlignment": "bottom" } ]
+    },
+    {
+      "Name": "Show Message",
+      "UUID": "com.jonpike.clickcastdeck.message",
+      "Icon": "imgs/message",
+      "Tooltip": "Flash your own text in the keystroke pill, e.g. “Watch this” or a chapter title.",
+      "PropertyInspectorPath": "ui/message.html",
+      "Controllers": [ "Keypad" ],
+      "States": [ { "Image": "imgs/message", "TitleAlignment": "bottom" } ]
+    }
+  ]
+}
